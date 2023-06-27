@@ -1,27 +1,20 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Platform } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Platform, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function BestIn2023 ({ navigation }) {
   return (
-    <LinearGradient
-      colors={['#6DECB9', '#EEF5B2']}
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 1}}
-      style={styles.container}
-    >
-      <Text style={styles.header}>Screen 1</Text>
+    <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Best cocktails for summer 2023</Text>
+        </View>
 
-
-      <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Search')}>
-          <LinearGradient colors={['#3FC5F0', '#3FC5F0', '#42DEE1']} style={styles.gradient}>
-            <Text style={styles.buttonText}>Search</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+        <View style={styles.logoContainer}>
+          <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
+        </View>
       </View>
-
-    </LinearGradient>
+    </View>
   );
 }
 
@@ -36,6 +29,28 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  headerContainer: {
+    flexDirection: 'row', 
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  titleContainer: {
+    flex: 1, 
+    marginRight: 10, 
+  }, 
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  logoContainer: {
+    marginTop: 20,
+    marginBottom: 20,
+    alignItems: 'flex-end',
+  },
+  logo: {
+    width: 80,
+    height: 80,
   },
   buttonWrapper: {
     marginBottom: 10,
