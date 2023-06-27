@@ -1,34 +1,24 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Platform, Image } from 'react-native';
-import Sorry from '../screens/Sorry';
 
-export default function HomePage({ navigation }) {
-  const handleSorryPress = () => {
-    navigation.navigate('Sorry');
-  };
 
-  const handleAboutPress = () => {
-    navigation.navigate('About');
-  }; 
+export default function Sorry({ navigation }) {
+    const handleSorryPress = () => {
+        navigation.navigate('Sorry');
+      };
+    return (
 
-  return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={require('../../assets/images/logo.png')}  style={styles.image} />
+        <Image source={require('../../assets/images/SorrySnail.png')}  style={styles.image} />
       </View>
       <View style={styles.contentContainer}>
-        <Text style={styles.header}>Are you over 18?</Text>
+        <Text style={styles.header}>Opps!</Text>
+        <Text style={styles.header}>We're sorry. Please come back when you reach 18 years old.</Text>
         <View style={styles.buttonWrapper}>
-          <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#FFCD29' }]} onPress={() => navigation.navigate('About')}>
+          <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#42DEE1' }]} onPress={() => navigation.navigate('Welcome Page')}>
             <View style={styles.buttonBackground}>
-              <Text style={[styles.buttonText, { color: 'black' }]}>Yes</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.buttonWrapper}>
-          <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#FFCD29' }]} onPress={() => navigation.navigate('Sorry')}>
-            <View style={styles.buttonBackground}>
-              <Text style={[styles.buttonText, { color: 'black' }]}>No</Text>
+              <Text style={[styles.buttonText, { color: 'black' }]}>Back to the Welcome Page</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -36,7 +26,6 @@ export default function HomePage({ navigation }) {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   header: {
     fontSize: 24,
@@ -48,21 +37,22 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#EEF5B2',
+    paddingHorizontal: 20, 
   },
   imageContainer: {
-    alignItems: 'center',
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: 70,
+    marginLeft:-20
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 250,
+    height: 250,
   },
   contentContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: -80,
   },
   buttonWrapper: {
     marginBottom: 10,
@@ -88,6 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    colour: '#42DEE1',
   },
   buttonText: {
     fontSize: 18,
@@ -102,3 +93,4 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+
