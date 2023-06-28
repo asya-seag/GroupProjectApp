@@ -16,7 +16,7 @@ export default function Sorry({ navigation }) {
         <Text style={styles.header}>Opps!</Text>
         <Text style={styles.header}>We're sorry. Please come back when you reach 18 years old.</Text>
         <View style={styles.buttonWrapper}>
-          <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#42DEE1' }]} onPress={() => navigation.navigate('Welcome Page')}>
+          <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#42DEE1' }]} onPress={() => navigation.navigate('Non Alcoholic Cocktails')}>
             <View style={styles.buttonBackground}>
               <Text style={[styles.buttonText, { color: 'black' }]}>Have a look at our selection of best non-alcoholic cocktails!</Text>
             </View>
