@@ -1,78 +1,139 @@
-import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Platform } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import React, { useState } from 'react';
+import { View, TextInput, TouchableOpacity, StyleSheet, Text, Linking} from 'react-native';
+import { Image } from 'react-native';
 
-export default function Search ({ navigation }) {
+const Search = ({ navigation }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    navigation.navigate('Search Results', { searchQuery });
+  };
+  const handleLinkPress = () =>{
+    Linking.openURL('https://www.liquor.com/best-nonalcoholic-beers-5078321')
+  }
+
   return (
-    <LinearGradient
-      colors={['#6DECB9', '#EEF5B2']}
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 1}}
-      style={styles.container}
-    >
-      <Text style={styles.header}>Screen 1</Text>
+    <View style={styles.container}>
+        <View style={styles.logocontainer}>
+        <Text style={styles.greetings}>Hello there!</Text>
+        <Image source={require('../../assets/logo.png')} style={styles.image} />
 
+        </View>
+        
+        
 
-      <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('BestIn2023')}>
-          <LinearGradient colors={['#3FC5F0', '#3FC5F0', '#42DEE1']} style={styles.gradient}>
-            <Text style={styles.buttonText}>Home</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+      <TextInput
+        placeholder="Enter a drink/ingredient name"
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+      />
+      <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
+        <Text style={styles.buttonText}>Search</Text>
+      </TouchableOpacity>
+      <View style={styles.morecontainter}>
+      <Text style={styles.moretext}>You may also like...</Text>
+      <View style={styles.cardContainer}>
+        <View style={styles.column}>
+      <Image source={require('../../assets/nonal.jpg')} style={styles.nonalimage} />
+      <Text style={styles.cardTitle} onPress={handleLinkPress}>
+        The 10 Best Non-Alcoholic Beers of 2023
+      </Text>
       </View>
-
-    </LinearGradient>
+      
+      <View style={styles.column}>
+          <Image source={require('../../assets/party.jpg')} style={styles.partyimage} />
+          <Text style={styles.cardTitle} onPress={handleLinkPress}>
+            20 Easy Party Snacks
+          </Text>
+        </View>
+        </View>
+      </View>
+      
+    </View>
   );
-}
-
+};
 const styles = StyleSheet.create({
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    margin: 20,
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonWrapper: {
-    marginBottom: 10,
-    ...Platform.select({ // Specific properties for each platform
-      ios: { // Shadow properties for iOS
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-      },
-      android: { // Elevation for Android
-        elevation: 5,
-      },
-    }),
-  },
-  buttonStyle: {
-    width: 250,
-    height: 50,
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
-  gradient: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  textStyle: {
-    fontSize: 20,
-    lineHeight: 21,
-    fontWeight: 'normal',
-    letterSpacing: 0.25,
-    color: 'black',
-    marginBottom: 10,
-  },
-});
+    container:{
+        backgroundColor: 'white',
+        flex:1,
+        justifyContent:'Top',
+        alignItems:'center'
+
+    },
+    logocontainer:{
+        flexDirection: 'row',
+        alignItems:'center'
+    },
+    morecontainter:{
+        alignItems:'center',
+        marginTop: 40
+    },
+    moretext:{
+        fontSize:20,
+        fontWeight:'bold',
+        marginBottom:20
+    },
+
+    image: {
+      width: 70,
+      height: 70,
+      borderRadius: 100,
+      marginRight:40,
+      marginLeft: 200,
+      marginBottom:50,
+      marginTop: 40,
+    },
+    nonalimage:{
+        width: 180,
+        height: 180,
+        marginTop: 50,
+        borderRadius: 50,
+    },
+    partyimage:{
+        width: 180,
+        height: 180,
+        marginTop: 50,
+        borderRadius: 50,
+    },
+    greetings:{
+        fontSize:20,
+        fontWeight:'bold',
+        marginLeft: 40,
+        marginBottom:50,
+    },
+    searchButton:{
+        backgroundColor: '#42DEE1',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        marginTop: 50,
+        borderRadius: 50,
+    },
+    buttonText:{
+        color:'#EEF5B2',
+        fontWeight:'bold',
+    },
+    linkText:{
+        color: '#42DEE1',
+        textDecorationLine: 'underline',
+        marginTop: 20,
+    },
+    cardContainer:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        width:'100%',
+        marginTop:20
+    },
+    column:{
+        alignItems: 'center',
+        flex: 1,
+    },
+    cardTitle:{
+        color: '#42DEE1',
+        textDecorationLine: 'underline',
+        marginTop:10,
+        textAlign:'center'
+    }
+  });
+  
+export default Search;
