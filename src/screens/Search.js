@@ -53,12 +53,11 @@ const Search = ({ navigation }) => {
   );
 };
 const styles = StyleSheet.create({
-    container:{
+    container: {
         backgroundColor: 'white',
-        flex:1,
-        justifyContent:'Top',
-        alignItems:'center'
-
+        flex: 1,
+        justifyContent: 'flex-start',
+        alignItems: 'center'
     },
     logocontainer:{
         flexDirection: 'row',

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function HomePage({ navigation }) {
+export default function NonAlcCocktails ({ navigation }) {
   return (
     <LinearGradient
       colors={['#6DECB9', '#EEF5B2']}
@@ -10,24 +10,13 @@ export default function HomePage({ navigation }) {
       end={{x: 1, y: 1}}
       style={styles.container}
     >
-      <Text style={styles.header}>Welcome to Summer-Tails</Text>
-      <Text style={styles.textStyle}>Are you 18+?</Text>
+      <Text style={styles.header}>Screen 1</Text>
+
 
       <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
-          <LinearGradient colors={['#3FC5F0', '#3FC5F0', '#42DEE1']} style={styles.gradient}>
-            <Text style={styles.buttonText}>YES</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+            <Text style={styles.buttonText}>Search</Text>
       </View>
 
-      <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Sorry')}>
-          <LinearGradient colors={['#3FC5F0', '#42DEE1']} style={styles.gradient}>
-            <Text style={styles.buttonText}>NO</Text>
-          </LinearGradient>
-        </TouchableOpacity>
-      </View>
     </LinearGradient>
   );
 }
