@@ -6,7 +6,7 @@ const Search = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
-    navigation.navigate('Search Results', { searchQuery });
+    navigation.navigate('Search Results', { searchQuery: searchQuery }); 
   };
   const handleLinkPress = () =>{
     Linking.openURL('https://www.liquor.com/best-nonalcoholic-beers-5078321')

@@ -19,7 +19,7 @@ const AboutName = 'About';
 const SearchName = 'Search';
 const BestIn2023Name = 'Best 2023';
 const AddRecipeName = 'Add Recipe';
-const SearchResultsName = 'SearchResults';
+const SearchResultsName = 'Search Results';
 const SorryName='Sorry';
 const NonAlcCocktailsName='Non Alcoholic Cocktails';
 
