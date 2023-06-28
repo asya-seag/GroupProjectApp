@@ -18,7 +18,7 @@ export default function Sorry({ navigation }) {
         <View style={styles.buttonWrapper}>
           <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#42DEE1' }]} onPress={() => navigation.navigate('Welcome Page')}>
             <View style={styles.buttonBackground}>
-              <Text style={[styles.buttonText, { color: 'black' }]}>Back to the Welcome Page</Text>
+              <Text style={[styles.buttonText, { color: 'black' }]}>Have a look at our selection of best non-alcoholic cocktails!</Text>
             </View>
           </TouchableOpacity>
         </View>
