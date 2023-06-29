@@ -10,15 +10,15 @@ export default function Sorry({ navigation }) {
 
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={require('../../assets/images/SorrySnail.png')}  style={styles.image} />
+        <Image source={require('../../assets/images/Sorry.png')}  style={styles.image} />
       </View>
       <View style={styles.contentContainer}>
-        <Text style={styles.header}>Opps!</Text>
-        <Text style={styles.header}>We're sorry. Please come back when you reach 18 years old.</Text>
+        <Text style={styles.title}>Opps!</Text>
+        <Text style={styles.header}>We're sorry, but you haven't reached the age of 18 yet. How about exploring our delightful assortment of non-alcoholic Mocktails instead?</Text>
         <View style={styles.buttonWrapper}>
           <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#42DEE1' }]} onPress={() => navigation.navigate('Non Alcoholic Cocktails')}>
             <View style={styles.buttonBackground}>
-              <Text style={[styles.buttonText, { color: 'black' }]}>Have a look at our selection of best non-alcoholic cocktails!</Text>
+              <Text style={[styles.buttonText, { color: 'black' }]}>Press for mocktails</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -28,20 +28,29 @@ export default function Sorry({ navigation }) {
 }
 const styles = StyleSheet.create({
   header: {
-    fontSize: 24,
+    fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 10,
+    marginBottom: 15,
+    textAlignVertical: 'center', 
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 10,
+    marginBottom: 15,
   },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#EEF5B2',
+    backgroundColor: '#ffffff',
     paddingHorizontal: 20, 
   },
   imageContainer: {
-    marginTop: 70,
+    marginTop: 120,
     marginLeft:-20
   },
   image: {
@@ -52,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: -80,
+    marginTop: -160,
   },
   buttonWrapper: {
     marginBottom: 10,
