@@ -1,34 +1,39 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Platform } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { View, StyleSheet, Text, TouchableOpacity, Platform, Image } from 'react-native';
+import Sorry from '../screens/Sorry';
 
 export default function HomePage({ navigation }) {
+  const handleSorryPress = () => {
+    navigation.navigate('Sorry');
+  };
+
+  const handleAboutPress = () => {
+    navigation.navigate('About');
+  }; 
+
   return (
-    <LinearGradient
-      colors={['#6DECB9', '#EEF5B2']}
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 1}}
-      style={styles.container}
-    >
-      <Text style={styles.header}>Welcome to Summer-Tails</Text>
-      <Text style={styles.textStyle}>Are you 18+?</Text>
-
-      <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
-          <LinearGradient colors={['#3FC5F0', '#3FC5F0', '#42DEE1']} style={styles.gradient}>
-            <Text style={styles.buttonText}>YES</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={require('../../assets/images/logo.png')}  style={styles.image} />
       </View>
-
-      <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Sorry')}>
-          <LinearGradient colors={['#3FC5F0', '#42DEE1']} style={styles.gradient}>
-            <Text style={styles.buttonText}>NO</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+      <View style={styles.contentContainer}>
+        <Text style={styles.header}>Are you over 18?</Text>
+        <View style={styles.buttonWrapper}>
+          <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#FFCD29' }]} onPress={() => navigation.navigate('About')}>
+            <View style={styles.buttonBackground}>
+              <Text style={[styles.buttonText, { color: 'black' }]}>Yes</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.buttonWrapper}>
+          <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#FFCD29' }]} onPress={() => navigation.navigate('Sorry')}>
+            <View style={styles.buttonBackground}>
+              <Text style={[styles.buttonText, { color: 'black' }]}>No</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
-    </LinearGradient>
+    </View>
   );
 }
 
@@ -37,23 +42,38 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    margin: 20,
+    marginVertical: 10,
   },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
+  },
+  imageContainer: {
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 10,
+  },
+  image: {
+    width: 150,
+    height: 150,
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonWrapper: {
     marginBottom: 10,
-    ...Platform.select({ // Specific properties for each platform
-      ios: { // Shadow properties for iOS
+    ...Platform.select({
+      ios: {
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
       },
-      android: { // Elevation for Android
+      android: {
         elevation: 5,
       },
     }),
@@ -64,13 +84,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
   },
-  gradient: {
+  buttonBackground: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
-    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },

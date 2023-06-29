@@ -1,18 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Platform, Image, ScrollView } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+
+
+
 
 export default function NonAlcCocktails({ navigation }) {
   return (
-    <LinearGradient
-      colors={['#42DEE1', '#EEF5B2']}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={styles.container}
-    >
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View>
-          <Text style={styles.header}>Our selection of great non-alcoholic cocktails!</Text>
+          <Text style={styles.pageHeader}>Our selection of great non-alcoholic cocktails!</Text>
           <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#42DEE1' }]} onPress={() => navigation.navigate('Welcome Page')}>
             <View style={styles.buttonBackground}>
               <Text style={[styles.buttonText, { color: 'black' }]}>Back to Welcome Page!</Text>
@@ -37,32 +33,41 @@ export default function NonAlcCocktails({ navigation }) {
             {'\u2022'} Pour the liquid into a copper mug for the iconic touch of a Moscow mule.{'\n'}
             {'\u2022'} Sprinkle in ginger beer and stir.
           </Text>
+
+          
+          <Text style={styles.header}>2. Cranberry Basil Sangria</Text>
+          <Image source={require('../../assets/images/nonalc/CranberryBasil.jpg')} style={styles.image} />
+          <Text style={styles.text}>
+            Yields 1 serving.{'\n'}
+            {'\n'}
+            Ingredients{'\n'}
+            {'\u2022'} 4 to 5 cucumber slices{'\n'}
+            {'\u2022'} 1 ounce honey syrup{'\n'}
+            {'\u2022'} 1.5 ounces mango puree{'\n'}
+            {'\u2022'} 1.5 ounces fresh lime juice{'\n'}
+            {'\u2022'} 1.5 ounces ginger beer{'\n'}
+            {'\u2022'} Ice{'\n'}
+            {'\n'}
+            Instructions{'\n'}
+            {'\u2022'} Muddle the cucumber and honey syrup into the bottom of a cocktail shaker.{'\n'}
+            {'\u2022'} Add the mango puree and lime juice to the mix, then shake with ice.{'\n'}
+            {'\u2022'} Pour the liquid into a copper mug for the iconic touch of a Moscow mule.{'\n'}
+            {'\u2022'} Sprinkle in ginger beer and stir.
+          </Text>
         </View>
       </ScrollView>
-    </LinearGradient>
   );
 }
 const styles = StyleSheet.create({
-    buttonWrapper: {
-    marginBottom: 10,
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-      },
-      android: {
-        elevation: 5,
-      },
-    }),
-  },
-  buttonStyle: {
-    width: 250,
-    height: 50,
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
+buttonStyle: {
+  width: 250,
+  height: 50,
+  borderRadius: 10,
+  overflow: 'hidden',
+  justifyContent: 'center',
+  alignItems: 'center',
+  alignSelf: 'center', 
+},
   buttonBackground: {
     flex: 1,
     justifyContent: 'center',
@@ -89,14 +94,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 20,
   },
+  pageHeader: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: 20,
+    marginTop:70,
+  },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     borderRadius: 30,
     marginRight: 20,
     marginLeft: 20,
     marginBottom: 20,
     marginTop: 20,
+    alignSelf: 'center', 
   },
   text: {
     fontSize: 18,
