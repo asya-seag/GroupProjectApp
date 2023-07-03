@@ -1,78 +1,63 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Platform } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { View, StyleSheet, Text, TouchableOpacity, Platform, Image } from 'react-native';
+import Sorry from '../screens/Sorry';
 
 export default function About({ navigation }) {
+
   return (
-    <LinearGradient
-      colors={['#6DECB9', '#EEF5B2']}
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 1}}
-      style={styles.container}
-    >
-      <Text style={styles.header}>Screen 1</Text>
-
-
-      <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Search')}>
-          <LinearGradient colors={['#3FC5F0', '#3FC5F0', '#42DEE1']} style={styles.gradient}>
-            <Text style={styles.buttonText}>Screen 2</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.logoContainer}>
+        <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
       </View>
-
-    </LinearGradient>
+      <View style={styles.panelContainer}>
+        <View style={styles.panel}>
+          <Text style={styles.aboutText}>
+            Welcome to Summer Tail - the ultimate cocktail app for refreshing recipes and responsible drinking.
+            {'\n'}
+            Discover delightful cocktails, store your favorite recipes, and track your alcohol consumption.
+            {'\n'}
+            Let Summer Tail be your guide to a vibrant and responsible drinking experience.
+            {'\n'}
+            Cheers to summer!
+          </Text>
+        </View>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    margin: 20,
-  },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'white',
   },
-  buttonWrapper: {
-    marginBottom: 10,
-    ...Platform.select({ // Specific properties for each platform
-      ios: { // Shadow properties for iOS
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-      },
-      android: { // Elevation for Android
-        elevation: 5,
-      },
-    }),
-  },
-  buttonStyle: {
-    width: 250,
-    height: 50,
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
-  gradient: {
-    flex: 1,
-    justifyContent: 'center',
+  logoContainer: {
     alignItems: 'center',
+    marginTop: 40,
+    marginBottom: 20,
   },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 18,
-    fontWeight: 'bold',
+  logo: {
+    width: 150,
+    height: 150,
   },
-  textStyle: {
-    fontSize: 20,
-    lineHeight: 21,
-    fontWeight: 'normal',
-    letterSpacing: 0.25,
-    color: 'black',
+  panelContainer: {
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  panel: {
+    backgroundColor: '#FFCD29',
+    padding: 10,
+    borderRadius: 5,
     marginBottom: 10,
+  },
+  aboutText: {
+    marginVertical: 5,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'black',
   },
 });
+

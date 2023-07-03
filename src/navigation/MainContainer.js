@@ -13,6 +13,7 @@ import AddRecipe from '../screens/AddRecipe';
 import SearchResults from '../screens/SearchResults';
 import Sorry from '../screens/Sorry';
 import NonAlcCocktails from '../screens/NonAlcCocktails';
+import Register from '../screens/Register'
 
 
 const HomePageName = 'Welcome Page';
@@ -24,6 +25,7 @@ const AddRecipeName = 'Add Recipe';
 const SearchResultsName = 'Search Results';
 const SorryName='Sorry';
 const NonAlcCocktailsName='Non Alcoholic Cocktails';
+const RegisterName = 'Register';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -83,6 +85,7 @@ export default function MainContainer() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="MainTabNavigator" component={MainTabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name={RegisterName} component={Register} options={{ headerShown: false }} />
         <Stack.Screen name={SearchResultsName} component={SearchResults} options={{ headerShown: false }} />
         <Stack.Screen name={SorryName} component={Sorry} options={{ headerShown: false }} />
         <Stack.Screen name={NonAlcCocktailsName} component={NonAlcCocktails} options={{ headerShown: false }} />
