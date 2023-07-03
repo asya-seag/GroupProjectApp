@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomePage from '../screens/WelcomePage';
 import About from '../screens/About';
+import LoginScreen from '../screens/LoginPage';
 import Search from '../screens/Search';
 import AlcoholUnitCalculatorScreen from '../screens/AlcUnits';
 import AddRecipe from '../screens/AddRecipe';
@@ -16,6 +17,7 @@ import NonAlcCocktails from '../screens/NonAlcCocktails';
 
 const HomePageName = 'Welcome Page';
 const AboutName = 'About';
+const LoginScreenName = 'Login';
 const SearchName = 'Search';
 const AlcUnitsName = 'Alcohol Units';
 const AddRecipeName = 'Add Recipe';
@@ -39,6 +41,8 @@ const MainTabNavigator = () => {
             iconName = focused ? 'home' : 'home-outline';
           } else if (rn === AboutName) {
             iconName = focused ? 'information-circle' : 'information-circle-outline';
+          } else if (rn === LoginScreenName) {
+            iconName = focused ? 'person-circle' : 'person-circle-outline'
           } else if (rn === SearchName) {
             iconName = focused ? 'search' : 'search-outline';
           } else if (rn === AlcUnitsName) {
@@ -66,6 +70,7 @@ const MainTabNavigator = () => {
     >
       <Tab.Screen name={HomePageName} component={HomePage} />
       <Tab.Screen name={AboutName} component={About} />
+      <Tab.Screen name={LoginScreenName} component={LoginScreen} />
       <Tab.Screen name={SearchName} component={Search} />
       <Tab.Screen name={AlcUnitsName} component={AlcoholUnitCalculatorScreen} />
       <Tab.Screen name={AddRecipeName} component={AddRecipe} />

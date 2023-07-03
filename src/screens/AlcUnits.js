@@ -26,6 +26,15 @@ const AlcoholUnitCalculatorScreen = () => {
         <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
       </View>
 
+      <Text style={styles.label}>
+        To keep health risks from alcohol to a low level if you drink most weeks:
+        {"\n\n"}
+        - Men and women are advised not to drink more than 14 units a week on a regular basis.
+        {"\n\n"}
+        - Spread your drinking over 3 or more days if you regularly drink as much as 14 units a week.
+        {"\n\n"}
+      </Text>
+
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Alcohol Volume (ml)</Text>
         <TextInput
@@ -60,7 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: '#FFFFFF', 
+    backgroundColor: '#FFFFFF',
     paddingHorizontal: 20,
   },
   headerContainer: {
