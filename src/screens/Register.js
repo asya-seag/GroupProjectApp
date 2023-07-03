@@ -1,24 +1,46 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput } from 'react-native';
 
-export default function LoginScreen({ navigation }) {
+export default function RegisterScreen({ navigation }) {
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
-        // login logic to be added in future
-        navigation.navigate('Search');
+    const handleRegister = () => {
+        // mocking for now registration logic possible in future
+        navigation.navigate('Home');
     };
 
-    const handleRegister = () => {
-        navigation.navigate('Register');
+    const handleLogin = () => {
+        navigation.navigate('Login');
     };
 
     return (
         <View style={styles.container}>
+            <View>
+                <Text>
+                    {'\n'}
+                    {'\n'}
+                    {'\n'}</Text>
+            </View>
+
             <View style={styles.headerContainer}>
-                <Text style={styles.title}>Welcome to the App!</Text>
+                <Text style={styles.title}>
+                    Register</Text>
                 <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
+            </View>
+
+            <View style={styles.textContainer}>
+                <Text style={styles.subtitle}>Please fill in the fields below:</Text>
+            </View>
+
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Username"
+                    value={username}
+                    onChangeText={setUsername}
+                />
             </View>
 
             <View style={styles.inputContainer}>
@@ -40,12 +62,12 @@ export default function LoginScreen({ navigation }) {
                 />
             </View>
 
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-                <Text style={styles.buttonText}>Login</Text>
+            <TouchableOpacity style={styles.button} onPress={handleRegister}>
+                <Text style={styles.buttonText}>Register</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={handleRegister}>
-                <Text style={styles.buttonText}>New user? Register here</Text>
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                <Text style={styles.buttonText}>Already registered? Go to Login</Text>
             </TouchableOpacity>
         </View>
     );
@@ -68,11 +90,19 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 22,
         fontWeight: 'bold',
-        flex: 1,
+        marginRight: 10,
     },
     logo: {
         width: 80,
         height: 80,
+    },
+    textContainer: {
+        width: '100%',
+        alignItems: 'flex-start',
+        marginBottom: 10,
+    },
+    subtitle: {
+        fontSize: 16,
     },
     inputContainer: {
         width: '100%',
