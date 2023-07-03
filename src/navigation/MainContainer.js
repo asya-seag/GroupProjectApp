@@ -7,7 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomePage from '../screens/WelcomePage';
 import About from '../screens/About';
 import Search from '../screens/Search';
-import BestIn2023 from '../screens/BestIn2023';
+import AlcoholUnitCalculatorScreen from '../screens/AlcUnits';
 import AddRecipe from '../screens/AddRecipe';
 import SearchResults from '../screens/SearchResults';
 import Sorry from '../screens/Sorry';
@@ -17,7 +17,7 @@ import NonAlcCocktails from '../screens/NonAlcCocktails';
 const HomePageName = 'Welcome Page';
 const AboutName = 'About';
 const SearchName = 'Search';
-const BestIn2023Name = 'Best 2023';
+const AlcUnitsName = 'Alcohol Units';
 const AddRecipeName = 'Add Recipe';
 const SearchResultsName = 'Search Results';
 const SorryName='Sorry';
@@ -41,7 +41,7 @@ const MainTabNavigator = () => {
             iconName = focused ? 'information-circle' : 'information-circle-outline';
           } else if (rn === SearchName) {
             iconName = focused ? 'search' : 'search-outline';
-          } else if (rn === BestIn2023Name) {
+          } else if (rn === AlcUnitsName) {
             iconName = focused ? 'star' : 'star-outline';
           } else if (rn === AddRecipeName) {
             iconName = focused ? 'add' : 'add-outline';
@@ -67,7 +67,7 @@ const MainTabNavigator = () => {
       <Tab.Screen name={HomePageName} component={HomePage} />
       <Tab.Screen name={AboutName} component={About} />
       <Tab.Screen name={SearchName} component={Search} />
-      <Tab.Screen name={BestIn2023Name} component={BestIn2023} />
+      <Tab.Screen name={AlcUnitsName} component={AlcoholUnitCalculatorScreen} />
       <Tab.Screen name={AddRecipeName} component={AddRecipe} />
     </Tab.Navigator>
   );

@@ -5,27 +5,25 @@ export default function AddRecipe({ navigation }) {
   const [cocktails, setCocktails] = useState([]);
   const [cocktailName, setCocktailName] = useState('');
   const [ingredients, setIngredients] = useState('');
+  const [instructions, setInstructions] = useState('');
 
   const addCocktail = () => {
     const newCocktail = {
       cocktailName,
       ingredients,
+      instructions,
     };
     setCocktails([...cocktails, newCocktail]);
     setCocktailName('');
     setIngredients('');
+    setInstructions('');
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Let's save some recipes!</Text>
-        </View>
-
-        <View style={styles.logoContainer}>
-          <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
-        </View>
+        <Text style={styles.title}>Let's save some recipes!</Text>
+        <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
       </View>
 
       <View style={styles.inputContainer}>
@@ -46,46 +44,51 @@ export default function AddRecipe({ navigation }) {
         />
       </View>
 
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Instructions"
+          value={instructions}
+          onChangeText={setInstructions}
+        />
+      </View>
+
       <TouchableOpacity style={styles.addButton} onPress={addCocktail}>
         <Text style={styles.buttonText}>Add to My Recipes</Text>
       </TouchableOpacity>
 
-      <View style={styles.noteContainer}>
-        {cocktails.map((cocktail, index) => (
-          <View key={index} style={styles.noteContainer}>
-            <Text style={styles.noteText}>Cocktail name: {cocktail.cocktailName}</Text>
-            <Text style={styles.noteText}>Ingredients: {cocktail.ingredients}</Text>
-          </View>
-        ))}
-      </View>
+      {cocktails.length > 0 && (
+        <View style={styles.noteContainer}>
+          {cocktails.map((cocktail, index) => (
+            <View key={index} style={[styles.noteContainer, { backgroundColor: '#FFCD29' }]}>
+              <Text style={styles.noteText}>Cocktail name: {cocktail.cocktailName}</Text>
+              <Text style={styles.noteText}>Ingredients: {cocktail.ingredients}</Text>
+              <Text style={styles.noteText}>Instructions: {cocktail.instructions}</Text>
+            </View>
+          ))}
+        </View>
+      )}
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: '#FFFFFF', 
     paddingHorizontal: 20,
   },
   headerContainer: {
-    flexDirection: 'row', 
+    flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 40,
     marginBottom: 20,
   },
-  titleContainer: {
-    flex: 1, 
-    marginRight: 10, 
-  }, 
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-  },
-  logoContainer: {
-    marginTop: 20,
-    marginBottom: 20,
-    alignItems: 'flex-end',
+    flex: 1,
   },
   logo: {
     width: 80,
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: 'black',
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -118,6 +121,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
+    backgroundColor: '#FFCD29',
   },
   noteText: {
     marginVertical: 5,
@@ -126,3 +130,11 @@ const styles = StyleSheet.create({
     color: 'black',
   },
 });
+
+
+
+
+
+
+
+
