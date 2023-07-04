@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 100,
     marginBottom: 10,
   },
   image: {
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop:-100,
   },
   buttonWrapper: {
     marginBottom: 10,

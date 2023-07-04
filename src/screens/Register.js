@@ -78,8 +78,9 @@ export default function RegisterScreen({ navigation }) {
                 <Text style={styles.buttonText}>Register</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-                <Text style={styles.buttonText}>Already registered? Go to Login</Text>
+
+            <TouchableOpacity onPress={handleLogin}>
+                <Text style={styles.authLink}>Already registered? Go to Login</Text>
             </TouchableOpacity>
         </View>
     );
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 22,
         fontWeight: 'bold',
-        marginRight: 10,
+        marginRight: 180,
     },
     logo: {
         width: 80,
@@ -139,4 +140,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
+    authLink: {
+        marginTop: 10,
+        marginLeft:20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: '#FFCD29',
+        fontSize: 16,
+        textDecorationLine: 'underline',
+      }  
 });
