@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function RegisterScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
-    const handleRegister = () => {
+    const handleRegister = async () => {
+        try {
+            await AsyncStorage.setItem('userData', JSON.stringify({ username, email, password }));
+            setRegistrationSuccess(true);
         // mocking for now registration logic possible in future
-        navigation.navigate('Home');
+        }catch (error) {
+            console.log(error)
+        }
+        
     };
 
     const handleLogin = () => {
@@ -61,6 +69,10 @@ export default function RegisterScreen({ navigation }) {
                     secureTextEntry
                 />
             </View>
+
+            {registrationSuccess && (
+                <Text style={styles.successText}>Registration successful! You can now log in.</Text>
+            )}
 
             <TouchableOpacity style={styles.button} onPress={handleRegister}>
                 <Text style={styles.buttonText}>Register</Text>
