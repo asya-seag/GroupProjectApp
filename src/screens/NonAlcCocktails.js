@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Platform, Image, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 
 
 
@@ -9,72 +9,70 @@ export default function NonAlcCocktails({ navigation }) {
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View>
         <Text style={styles.pageHeader}>Our selection of great non-alcoholic cocktails!</Text>
-        <TouchableOpacity style={[styles.buttonStyle, { backgroundColor: '#42DEE1' }]} onPress={() => navigation.navigate('Welcome Page')}>
-          <View style={styles.buttonBackground}>
-            <Text style={[styles.buttonText, { color: 'black' }]}>Back to Welcome Page!</Text>
-          </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Welcome Page')}>
+          <Text style={styles.homeLink}>Back to home page</Text>
         </TouchableOpacity>
-        <Text style={styles.header}>1. Mango Mule</Text>
-        <Image source={require('../../assets/images/nonalc/MangoMule.jpg')} style={styles.image} />
-        <Text style={styles.text}>
-          Yields 1 serving.{'\n'}
-          {'\n'}
-          Ingredients{'\n'}
-          {'\u2022'} 4 to 5 cucumber slices{'\n'}
-          {'\u2022'} 1 ounce honey syrup{'\n'}
-          {'\u2022'} 1.5 ounces mango puree{'\n'}
-          {'\u2022'} 1.5 ounces fresh lime juice{'\n'}
-          {'\u2022'} 1.5 ounces ginger beer{'\n'}
-          {'\u2022'} Ice{'\n'}
-          {'\n'}
-          Instructions{'\n'}
-          {'\u2022'} Muddle the cucumber and honey syrup into the bottom of a cocktail shaker.{'\n'}
-          {'\u2022'} Add the mango puree and lime juice to the mix, then shake with ice.{'\n'}
-          {'\u2022'} Pour the liquid into a copper mug for the iconic touch of a Moscow mule.{'\n'}
-          {'\u2022'} Sprinkle in ginger beer and stir.
-        </Text>
+      <Text style={styles.header}>1. Mango Mule</Text>
+      <Image source={require('../../assets/images/nonalc/MangoMule.jpg')} style={styles.image} />
+      <Text style={styles.text}>
+        Yields 1 serving.{'\n'}
+        {'\n'}
+        Ingredients{'\n'}
+        {'\u2022'} 4 to 5 cucumber slices{'\n'}
+        {'\u2022'} 1 ounce honey syrup{'\n'}
+        {'\u2022'} 1.5 ounces mango puree{'\n'}
+        {'\u2022'} 1.5 ounces fresh lime juice{'\n'}
+        {'\u2022'} 1.5 ounces ginger beer{'\n'}
+        {'\u2022'} Ice{'\n'}
+        {'\n'}
+        Instructions{'\n'}
+        {'\u2022'} Muddle the cucumber and honey syrup into the bottom of a cocktail shaker.{'\n'}
+        {'\u2022'} Add the mango puree and lime juice to the mix, then shake with ice.{'\n'}
+        {'\u2022'} Pour the liquid into a copper mug for the iconic touch of a Moscow mule.{'\n'}
+        {'\u2022'} Sprinkle in ginger beer and stir.
+      </Text>
 
 
-        <Text style={styles.header}>2. Cranberry Basil Sangria</Text>
-        <Image source={require('../../assets/images/nonalc/CranberryBasil.jpg')} style={styles.image} />
-        <Text style={styles.text}>
-          Yields 1 serving.{'\n'}
-          {'\n'}
-          Ingredients{'\n'}
-          {'\u2022'} 4 to 5 cucumber slices{'\n'}
-          {'\u2022'} 1 ounce honey syrup{'\n'}
-          {'\u2022'} 1.5 ounces mango puree{'\n'}
-          {'\u2022'} 1.5 ounces fresh lime juice{'\n'}
-          {'\u2022'} 1.5 ounces ginger beer{'\n'}
-          {'\u2022'} Ice{'\n'}
-          {'\n'}
-          Instructions{'\n'}
-          {'\u2022'} Muddle the cucumber and honey syrup into the bottom of a cocktail shaker.{'\n'}
-          {'\u2022'} Add the mango puree and lime juice to the mix, then shake with ice.{'\n'}
-          {'\u2022'} Pour the liquid into a copper mug for the iconic touch of a Moscow mule.{'\n'}
-          {'\u2022'} Sprinkle in ginger beer and stir.
-        </Text>
+      <Text style={styles.header}>2. Cranberry Basil Sangria</Text>
+      <Image source={require('../../assets/images/nonalc/CranberryBasil.jpg')} style={styles.image} />
+      <Text style={styles.text}>
+        Yields 1 serving.{'\n'}
+        {'\n'}
+        Ingredients{'\n'}
+        {'\u2022'} 4 to 5 cucumber slices{'\n'}
+        {'\u2022'} 1 ounce honey syrup{'\n'}
+        {'\u2022'} 1.5 ounces mango puree{'\n'}
+        {'\u2022'} 1.5 ounces fresh lime juice{'\n'}
+        {'\u2022'} 1.5 ounces ginger beer{'\n'}
+        {'\u2022'} Ice{'\n'}
+        {'\n'}
+        Instructions{'\n'}
+        {'\u2022'} Muddle the cucumber and honey syrup into the bottom of a cocktail shaker.{'\n'}
+        {'\u2022'} Add the mango puree and lime juice to the mix, then shake with ice.{'\n'}
+        {'\u2022'} Pour the liquid into a copper mug for the iconic touch of a Moscow mule.{'\n'}
+        {'\u2022'} Sprinkle in ginger beer and stir.
+      </Text>
 
 
-        <Text style={styles.header}>3. Lemon Drop</Text>
-        <Image source={require('../../assets/images/nonalc/LemonDrop.png')} style={styles.image} />
-        <Text style={styles.text}>
-          Yields 1 serving.{'\n'}
-          {'\n'}
-          Ingredients{'\n'}
-          {'\u2022'} ½ lemon, zested, plus 15ml lemon juice{'\n'}
-          {'\u2022'} 1 tbsp golden caster sugar{'\n'}
-          {'\u2022'} 50ml alcohol-free gin (or use water){'\n'}
-          {'\u2022'} 1 tsp white wine vinegar{'\n'}
-          {'\u2022'} 1 tbsp marmalade{'\n'}
-          {'\u2022'} Ice{'\n'}
-          {'\n'}
-          Method{'\n'}
-          {'\u2022'} Combine the lemon zest and sugar on a small plate. Dip the rim of a coupe glass in water, then the sugar mixture. Set aside.{'\n'}
-          {'\u2022'} Put all of the ingredients into a cocktail shaker with a handful of ice. Shake until the outside of the shaker feels icy cold. Strain through a fine sieve into the prepared glass.
-        </Text>
-      </View>
-    </ScrollView>
+      <Text style={styles.header}>3. Lemon Drop</Text>
+      <Image source={require('../../assets/images/nonalc/LemonDrop.png')} style={styles.image} />
+      <Text style={styles.text}>
+        Yields 1 serving.{'\n'}
+        {'\n'}
+        Ingredients{'\n'}
+        {'\u2022'} ½ lemon, zested, plus 15ml lemon juice{'\n'}
+        {'\u2022'} 1 tbsp golden caster sugar{'\n'}
+        {'\u2022'} 50ml alcohol-free gin (or use water){'\n'}
+        {'\u2022'} 1 tsp white wine vinegar{'\n'}
+        {'\u2022'} 1 tbsp marmalade{'\n'}
+        {'\u2022'} Ice{'\n'}
+        {'\n'}
+        Method{'\n'}
+        {'\u2022'} Combine the lemon zest and sugar on a small plate. Dip the rim of a coupe glass in water, then the sugar mixture. Set aside.{'\n'}
+        {'\u2022'} Put all of the ingredients into a cocktail shaker with a handful of ice. Shake until the outside of the shaker feels icy cold. Strain through a fine sieve into the prepared glass.
+      </Text>
+    </View>
+    </ScrollView >
   );
 }
 const styles = StyleSheet.create({
@@ -140,6 +138,13 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginRight: 15,
     marginLeft: 20,
+  },
+  homeLink: {
+    marginTop: 10,
+    marginLeft:15,
+    color: '#42DEE1',
+    fontSize: 16,
+    textDecorationLine: 'underline',
   },
 
 });

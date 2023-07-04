@@ -21,6 +21,9 @@ export default function Sorry({ navigation }) {
               <Text style={[styles.buttonText, { color: 'black' }]}>Press for mocktails</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Welcome Page')}>
+          <Text style={styles.homeLink}>Back to home page</Text>
+        </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -30,7 +33,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 16,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'justify',
     marginVertical: 10,
     marginBottom: 15,
     textAlignVertical: 'center', 
@@ -101,5 +104,14 @@ const styles = StyleSheet.create({
     color: 'black',
     marginBottom: 10,
   },
+  homeLink: {
+    marginTop: 10,
+    marginLeft:50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#42DEE1',
+    fontSize: 16,
+    textDecorationLine: 'underline',
+  }  
 });
 

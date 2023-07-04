@@ -13,10 +13,10 @@ export default function LoginScreen({ navigation }) {
         try {
             // Retrieve the stored data from AsyncStorage
             const storedData = await AsyncStorage.getItem('userData');
-    
+
             if (storedData) {
                 const { email: storedEmail, password: storedPassword } = JSON.parse(storedData);
-    
+
                 // Perform the login logic using the stored data
                 if (email === storedEmail && password === storedPassword) {
                     // Successful login
@@ -74,10 +74,11 @@ export default function LoginScreen({ navigation }) {
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={handleRegister}>
-                <Text style={styles.buttonText}>New user? Register here</Text>
+
+            <TouchableOpacity onPress={handleRegister}>
+                <Text style={styles.authLink}>New user? Register here</Text>
             </TouchableOpacity>
-        </View>
+        </View >
     );
 }
 
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 40,
+        marginTop: 80,
         marginBottom: 20,
     },
     title: {
@@ -127,4 +128,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
+    authLink: {
+        marginTop: 10,
+        marginLeft:20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: '#FFCD29',
+        fontSize: 16,
+        textDecorationLine: 'underline',
+      }  
 });
