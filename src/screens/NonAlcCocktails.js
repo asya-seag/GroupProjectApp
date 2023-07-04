@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: 'center',
     paddingVertical: 20,
+    backgroundColor: '#ffffff',
   },
   header: {
     fontSize: 22,
