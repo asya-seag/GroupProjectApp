@@ -20,7 +20,7 @@ To view and test the app on your local machine, follow these steps:
 1. Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/your-username/summer-tail-app.git
+git clone https://github.com/asya-seag/GroupProjectApp.git
 cd summer-tail-app
 ```
 2. Open the project folder in your preferred Integrated Development Environment (IDE).
