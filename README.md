@@ -4,11 +4,11 @@ Welcome to the repository for the Summer Tail Mobile App, developed as part of t
 
 ## Team Members
 
-- Yasmin Saleban
-- Man Zhang
-- Gina Kondyleniou
-- Asya Seagrave
-- Magdalena Krupa
+- [Yasmin Saleban](https://github.com/jasminattor)
+- [Man Zhang](https://github.com/margogo12)
+- [Gina Kondyleniou](https://github.com/GinaKon)
+- [Asya Seagrave](https://github.com/asya-seag)
+- [Magdalena Krupa](https://github.com/MagdalenaKrupa)
 
 ## Project Overview
 
